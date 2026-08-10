@@ -1,0 +1,22 @@
+test_id,level,test,configuration,proposed_acceptance,evidence,status
+VAL-001,L0,"288-pin map check","Final schematic versus controlled table","288 of 288 exact; zero unexplained mismatches","CI report and source hashes",GENERATE
+VAL-002,L0,"DRAM ball and byte-lane check","All ranks and subchannels","All balls classified; 64 unique DQ; DQS and rank consistent","Netlist report",GENERATE
+VAL-003,L1,"Fabrication coupon TDR","Every PCB lot","Within contracted impedance tolerance","Fab report and coupon ID",GENERATE
+VAL-004,L1,"Assembly process review","Every EVT lot","MSL profile SPI AOI and X-ray records complete","Serialized first-article report",GENERATE
+VAL-005,L2,"Unpowered rail and net screening","Every module","Within golden limits; no shorts or opens","Fixture log",GENERATE
+VAL-006,L3,"SPD hub readout","Offline jig","Correct ID temperature and 1024-byte readback where supported","Raw dump and decoder output",GENERATE
+VAL-007,L3,"PMIC sequencing","Offline jig and selected load","All rails sequencing ripple transient and faults within exact data","Scope waveforms and register log",GENERATE
+VAL-008,L4,"First boot","One DIMM one DPC at JEDEC-4800","POST and correct capacity/SPD without retry loop","BIOS and console log",GENERATE
+VAL-009,L5,"Cold and warm starts","Each speed and primary platform","Proposed 10 cold plus 10 warm with zero failures","Automated cycle log",DECISION
+VAL-010,L5,"MemTest86","4800 5600 and 6000","Proposed 4 full passes; zero errors","HTML or machine log",DECISION
+VAL-011,L5,"stressapptest","4800 5600 and 6000","Proposed 8 hours per speed; zero miscompare CRC WHEA or MCA","Raw system and tool logs",DECISION
+VAL-012,L5,"Extended 6000 load","Final profile on each primary platform","Proposed 24 hours; zero silent or corrected errors","Raw logs rail and temperature telemetry",DECISION
+VAL-013,L6,"Intel modern","Z890 and Core Ultra 200S; locked BIOS","All L4-L5 tests pass","Platform manifest",GENERATE
+VAL-014,L6,"Intel OC compatibility","Z790 and 14th gen; locked BIOS","Fallback plus marketed XMP claim pass","Platform manifest",GENERATE
+VAL-015,L6,"AMD modern","X870E or B850 and Ryzen 9000","Fallback plus marketed EXPO claim pass","Platform manifest",GENERATE
+VAL-016,L6,"AMD established","X670E or B650 and Ryzen 7000","Fallback plus marketed EXPO claim pass","Platform manifest",GENERATE
+VAL-017,L7,"Temperature corners","Declared module range at each release speed","Boot and full selected test without error or limit violation","Chamber log and calibrated sensors",DECISION
+VAL-018,L7,"Rail margin and transient","Worst-case read write activate traffic","Meets exact DRAM/PMIC DC and transient limits with margin","Scope report",GENERATE
+VAL-019,L7,"DDR5 electrical correlation","Representative modules and worst topology","JEDEC-derived eye timing and mask limits pass","Qualified lab report",GENERATE
+VAL-020,L8,"Pilot yield and failure analysis","Multiple lots and component dates","Predeclared yield target met; no open systematic failure","Pilot report and Pareto",DECISION
+VAL-021,L8,"Regulatory and material file","Retail configuration and packaging","All applicable evidence and declarations approved","Technical file index",DECISION
